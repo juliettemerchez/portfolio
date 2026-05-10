@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juliette Merchez · Early Years Educator</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#F9F5EE;--warm:#EDE5D5;--sage:#8A9E85;--sage-dark:#5C7057;
+  --text:#2A2420;--muted:#7A6F68;--border:#D8CEBC;--accent:#C4856A;
+  --en-bg:#E6F1FB;--en-text:#185FA5;
+  --fr-bg:#FAEEDA;--fr-text:#854F0B;
+  --atl-bg:#EAF3DE;--atl-text:#3B6D11;
+  --lp-bg:#E1F5EE;--lp-text:#0F6E56;
+}
+.uoi-place   {--uoi-light:#E6F1FB;--uoi-mid:#378ADD;--uoi-dark:#0C447C;--uoi-border:#B5D4F4;}
+.uoi-who     {--uoi-light:#FAECE7;--uoi-mid:#D85A30;--uoi-dark:#712B13;--uoi-border:#F5C4B3;}
+.uoi-planet  {--uoi-light:#EAF3DE;--uoi-mid:#639922;--uoi-dark:#27500A;--uoi-border:#C0DD97;}
+.uoi-express {--uoi-light:#FAEEDA;--uoi-mid:#BA7517;--uoi-dark:#633806;--uoi-border:#FAC775;}
+.uoi-organize{--uoi-light:#EEEDFE;--uoi-mid:#7F77DD;--uoi-dark:#3C3489;--uoi-border:#CECBF6;}
+.uoi-works   {--uoi-light:#E1F5EE;--uoi-mid:#1D9E75;--uoi-dark:#085041;--uoi-border:#9FE1CB;}
+
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);font-size:15px;line-height:1.7;}
+
+/* ── LANG SWITCH ── */
+/* elements hidden/shown by language */
+.fr-only{display:block;}.en-only{display:none;}
+.lang-en .fr-only{display:none !important;}.lang-en .en-only{display:block !important;}
+.lang-en span.fr-only{display:none !important;}.lang-en span.en-only{display:inline !important;}
+span.fr-only{display:inline;}.span.en-only{display:none;}
+/* nav lang toggle */
+.lang-toggle{display:flex;gap:0;margin-left:0.5rem;}
+.lang-btn{padding:0.3rem 0.7rem;border:1.5px solid var(--border);background:white;font-family:'Jost',sans-serif;font-size:0.72rem;font-weight:500;cursor:pointer;color:var(--muted);transition:all 0.18s;letter-spacing:0.05em;}
+.lang-btn:first-child{border-right:none;}
+.lang-btn.active{background:var(--text);color:white;border-color:var(--text);}
+.lang-btn:hover:not(.active){border-color:var(--sage);color:var(--sage-dark);}
+
+/* ── EDITOR BAR ── */
+#editorBar{position:fixed;bottom:1.2rem;right:1.2rem;z-index:1000;flex-direction:column;align-items:flex-end;gap:0.5rem;display:none;}
+#editorBar.visible{display:flex;}
+.editor-badge{background:var(--sage-dark);color:white;padding:0.4rem 1rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;display:flex;align-items:center;gap:0.4rem;}
+#lockBtn{padding:0.35rem 0.8rem;background:white;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;color:var(--muted);}
+#lockBtn:hover{border-color:var(--accent);color:var(--accent);}
+.editor-only{display:none !important;}
+.is-editor .editor-only{display:flex !important;}
+.is-editor .editor-only.btn-inline{display:inline-flex !important;}
+
+/* login */
+#loginModal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(42,36,32,0.65);align-items:center;justify-content:center;}
+#loginModal.open{display:flex;}
+.login-box{background:var(--cream);padding:2.5rem 2rem;max-width:340px;width:100%;border:1px solid var(--border);text-align:center;}
+.login-box h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;margin-bottom:0.4rem;}
+.login-box p{font-size:0.82rem;color:var(--muted);margin-bottom:1.4rem;}
+.login-box input{width:100%;background:white;border:1px solid var(--border);padding:0.65rem 0.9rem;font-family:'Jost',sans-serif;font-size:0.9rem;color:var(--text);outline:none;margin-bottom:0.8rem;text-align:center;letter-spacing:0.2em;}
+.login-error{color:#A32D2D;font-size:0.78rem;margin-bottom:0.6rem;display:none;}
+.login-btns{display:flex;gap:0.6rem;justify-content:center;}
+
+/* lightbox */
+#lightbox{display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,0.88);align-items:center;justify-content:center;cursor:zoom-out;}
+#lightbox.open{display:flex;}
+#lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;}
+#lightbox .lb-close{position:absolute;top:1.2rem;right:1.5rem;color:white;font-size:1.8rem;cursor:pointer;opacity:0.7;background:none;border:none;}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:200;background:var(--cream);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem;gap:1rem;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--text);text-decoration:none;flex-shrink:0;}
+.nav-logo span{color:var(--accent);font-style:italic;}
+.nav-right{display:flex;align-items:center;gap:0.5rem;}
+.nav-links{display:flex;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;padding:0.5rem 0.9rem;transition:color 0.2s;display:flex;align-items:center;gap:0.35rem;}
+.nav-links a:hover,.nav-links a.active{color:var(--text);}
+.nav-toggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text);}
+
+/* ── HERO ── */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:91vh;align-items:center;}
+.hero-left{padding:5rem 3rem 5rem 3.5rem;display:flex;flex-direction:column;justify-content:center;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage-dark);font-weight:500;margin-bottom:1.8rem;}
+.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--sage);}
+h1.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5rem);font-weight:300;line-height:1.05;margin-bottom:0.3rem;}
+h1.hero-name em{font-style:italic;color:var(--accent);}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:300;font-style:italic;color:var(--muted);margin-bottom:2rem;}
+.hero-desc{font-size:0.92rem;color:var(--muted);max-width:380px;line-height:1.9;margin-bottom:2.5rem;border-left:2px solid var(--sage);padding-left:1.2rem;}
+.hero-cta{display:inline-flex;gap:1rem;flex-wrap:wrap;}
+.btn{padding:0.72rem 1.8rem;font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;text-decoration:none;cursor:pointer;border:none;transition:all 0.25s;display:inline-flex;align-items:center;gap:0.4rem;}
+.btn-primary{background:var(--sage-dark);color:#fff;}
+.btn-primary:hover{background:var(--text);}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border);}
+.btn-outline:hover{border-color:var(--sage);color:var(--sage-dark);}
+.hero-right{background:var(--warm);height:100%;display:flex;align-items:center;justify-content:center;}
+.hero-illustration{display:flex;flex-direction:column;align-items:center;gap:1.5rem;padding:3rem;}
+.lang-badge-row{display:flex;gap:1rem;}
+.lang-pill{padding:0.38rem 1.1rem;border-radius:50px;font-size:0.76rem;letter-spacing:0.08em;font-weight:500;}
+.lang-pill.fr{background:var(--sage);color:#fff;}
+.lang-pill.en{background:var(--accent);color:#fff;}
+.stat-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;max-width:300px;}
+.stat-card{background:white;padding:1.1rem;border:1px solid var(--border);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--sage-dark);line-height:1;}
+.stat-label{font-size:0.68rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.2rem;}
+.decor-quote{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:var(--muted);text-align:center;max-width:240px;line-height:1.6;}
+
+/* ── SECTIONS ── */
+section{padding:5.5rem 3.5rem;}
+section:nth-of-type(even){background:var(--warm);}
+.section-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem;flex-wrap:wrap;}
+.section-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--border);line-height:1;}
+.section-title h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;}
+.section-title p{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-top:0.1rem;}
+
+/* ── ABOUT ── */
+#about .about-grid{display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:start;}
+.about-photo-wrap{display:flex;flex-direction:column;gap:1rem;}
+.photo-frame{width:100%;aspect-ratio:3/4;background:var(--warm);border:1px solid var(--border);overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-empty{display:flex;flex-direction:column;align-items:center;gap:0.5rem;color:var(--muted);}
+.photo-empty i{font-size:2.2rem;opacity:0.35;}
+.upload-photo-btn{padding:0.5rem 0.9rem;background:white;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;cursor:pointer;color:var(--muted);width:100%;justify-content:center;align-items:center;gap:0.4rem;}
+.upload-photo-btn:hover{border-color:var(--sage);color:var(--sage-dark);}
+.about-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:400;margin-bottom:0.2rem;}
+.about-role{font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-dark);font-weight:500;margin-bottom:1.3rem;}
+.section-edit-btn{display:none;align-items:center;gap:0.35rem;padding:0.35rem 0.85rem;background:white;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;cursor:pointer;color:var(--muted);margin-bottom:1.2rem;margin-right:0.4rem;}
+.is-editor .section-edit-btn{display:inline-flex;}
+.section-edit-btn:hover{border-color:var(--sage);color:var(--sage-dark);}
+.about-section{margin-bottom:1.8rem;}
+.about-section-title{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.45rem;}
+.about-text{font-size:0.9rem;color:var(--muted);line-height:1.9;}
+.about-text p{margin-bottom:0.7rem;}
+.about-text p:last-child{margin-bottom:0;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.45rem;}
+.skill-tag{padding:0.28rem 0.75rem;background:var(--cream);border:1px solid var(--border);font-size:0.73rem;color:var(--muted);}
+
+/* ── FORMS ── */
+.form-field{display:flex;flex-direction:column;gap:0.3rem;}
+.form-field label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);}
+.form-field input,.form-field textarea,.form-field select{background:white;border:1px solid var(--border);padding:0.6rem 0.85rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:var(--text);outline:none;transition:border-color 0.2s;resize:none;width:100%;}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--sage);}
+.save-btn{padding:0.65rem 1.6rem;background:var(--sage-dark);color:white;border:none;font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;}
+.save-btn:hover{background:var(--text);}
+.cancel-btn{padding:0.65rem 1.2rem;background:white;color:var(--muted);border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;}
+.btn-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.3rem;}
+.edit-form{display:none;flex-direction:column;gap:0.9rem;margin-top:0.5rem;}
+.edit-form.visible{display:flex;}
+
+/* ── EXPERIENCE ── */
+#experience .exp-list{max-width:760px;}
+.exp-item{display:grid;grid-template-columns:130px 1fr;gap:2.5rem;padding:2.2rem 0;border-bottom:1px solid var(--border);position:relative;}
+.exp-item:last-child{border-bottom:none;}
+.exp-year{font-family:'Cormorant Garamond',serif;font-size:0.92rem;color:var(--muted);font-style:italic;padding-top:0.2rem;}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--text);margin-bottom:0.2rem;}
+.exp-school{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:0.5rem;}
+.exp-desc{font-size:0.86rem;color:var(--muted);line-height:1.85;}
+.exp-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.7rem;}
+.exp-tag{padding:0.22rem 0.7rem;font-size:0.7rem;border:1px solid var(--border);color:var(--muted);}
+.exp-actions{display:none;position:absolute;top:1.5rem;right:0;gap:0.4rem;align-items:center;}
+.is-editor .exp-actions{display:flex;}
+.exp-action-btn{background:white;border:1px solid var(--border);color:var(--muted);font-size:0.7rem;cursor:pointer;font-family:'Jost',sans-serif;padding:0.22rem 0.6rem;display:flex;align-items:center;gap:0.25rem;transition:all 0.15s;}
+.exp-action-btn:hover{border-color:var(--sage);color:var(--sage-dark);}
+.exp-action-btn.del:hover{border-color:#A32D2D;color:#A32D2D;}
+.add-exp-btn{display:none;align-items:center;gap:0.4rem;margin-top:1.5rem;padding:0.6rem 1.4rem;background:white;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;color:var(--muted);}
+.is-editor .add-exp-btn{display:inline-flex;}
+.add-exp-btn:hover{border-color:var(--sage);color:var(--sage-dark);}
+
+/* ── LEARNING ── */
+#learning .controls{padding:0 0 1.5rem;display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;}
+.ctrl-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:500;flex-shrink:0;}
+.filter-pills{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.pill{display:inline-flex;align-items:center;gap:0.35rem;padding:0.28rem 0.75rem;font-size:0.7rem;letter-spacing:0.05em;border:1px solid var(--border);background:white;color:var(--muted);cursor:pointer;font-family:'Jost',sans-serif;transition:all 0.2s;}
+.pill i{font-size:0.82rem;}
+.pill.active{color:white;border-color:transparent;}
+.pill:hover:not(.active){border-color:var(--sage);color:var(--sage-dark);}
+.add-learning-btn{display:none;margin-left:auto;padding:0.45rem 1.1rem;background:var(--accent);color:white;border:none;font-family:'Jost',sans-serif;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;align-items:center;gap:0.35rem;}
+.is-editor .add-learning-btn{display:flex;}
+.add-learning-btn:hover{background:var(--text);}
+.uoi-group{margin-bottom:2.5rem;}
+.uoi-header{display:flex;align-items:center;gap:0.9rem;margin-bottom:1rem;padding:0.7rem 1rem;border-left:3px solid var(--uoi-mid,#8A9E85);background:var(--uoi-light,var(--warm));}
+.uoi-icon{font-size:1.5rem;color:var(--uoi-dark,var(--text));}
+.uoi-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--uoi-dark,var(--text));}
+.uoi-sub{font-size:0.67rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--uoi-mid,var(--muted));font-weight:500;}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
+.learn-card{background:white;border:1px solid var(--border);overflow:hidden;transition:transform 0.2s,border-color 0.2s;position:relative;}
+.learn-card:hover{transform:translateY(-2px);border-color:var(--uoi-mid,var(--sage));}
+.card-accent{height:3px;background:var(--uoi-mid,var(--sage));}
+.card-delete-btn{display:none;position:absolute;top:0.6rem;right:0.6rem;background:rgba(255,255,255,0.9);border:1px solid var(--border);color:var(--muted);font-size:0.7rem;cursor:pointer;padding:0.2rem 0.5rem;font-family:'Jost',sans-serif;z-index:2;}
+.is-editor .card-delete-btn{display:block;}
+.card-delete-btn:hover{color:#A32D2D;border-color:#A32D2D;}
+.card-thumb-wrap{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--uoi-light,var(--warm));cursor:zoom-in;}
+.card-thumb-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s;}
+.card-thumb-wrap:hover img{transform:scale(1.04);}
+.card-thumb-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;color:var(--uoi-dark,var(--muted));font-size:0.75rem;}
+.card-thumb-placeholder i{font-size:1.8rem;opacity:0.35;}
+.zoom-hint{position:absolute;bottom:0.5rem;right:0.5rem;background:rgba(0,0,0,0.45);color:white;font-size:0.62rem;padding:0.2rem 0.5rem;letter-spacing:0.06em;opacity:0;transition:opacity 0.2s;}
+.card-thumb-wrap:hover .zoom-hint{opacity:1;}
+.card-body{padding:1rem;}
+.card-lang-badge{display:inline-flex;align-items:center;gap:0.3rem;padding:0.16rem 0.6rem;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;border-radius:2px;margin-bottom:0.6rem;}
+.card-lang-badge.en{background:var(--en-bg);color:var(--en-text);}
+.card-lang-badge.fr{background:var(--fr-bg);color:var(--fr-text);}
+.card-intention{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text);line-height:1.45;margin-bottom:0.7rem;}
+.card-vocab{display:flex;flex-wrap:wrap;gap:0.28rem;margin-bottom:0.7rem;}
+.vocab-chip{padding:0.14rem 0.48rem;font-size:0.66rem;font-weight:500;border-radius:2px;}
+.vocab-chip.uv{background:var(--uoi-light,var(--warm));color:var(--uoi-dark,var(--muted));border:1px solid var(--uoi-border,var(--border));}
+.vocab-chip.sw{background:#F1EFE8;color:#5F5E5A;border:1px solid #D3D1C7;font-style:italic;}
+.card-footer{padding:0.65rem 1rem;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:0.28rem;align-items:center;background:var(--cream);}
+.footer-label{font-size:0.63rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-right:0.2rem;}
+.tag{padding:0.16rem 0.5rem;font-size:0.65rem;font-weight:500;border-radius:2px;}
+.tag-atl{background:var(--atl-bg);color:var(--atl-text);}
+.tag-lp{background:var(--lp-bg);color:var(--lp-text);}
+
+/* ── CONTACT ── */
+#contact .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;}
+.contact-intro-text{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;line-height:1.5;margin-bottom:1.3rem;}
+.contact-intro-text em{color:var(--accent);font-style:italic;}
+.contact-sub{font-size:0.88rem;color:var(--muted);line-height:1.9;margin-bottom:1.8rem;}
+.contact-links{display:flex;flex-direction:column;gap:0.8rem;}
+.contact-link-item{display:flex;align-items:center;gap:0.9rem;padding:0.9rem 1.1rem;background:white;border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all 0.2s;font-size:0.86rem;}
+.contact-link-item:hover{border-color:var(--sage);transform:translateX(4px);}
+.contact-link-label{font-weight:500;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);display:block;}
+.contact-link-value{font-size:0.88rem;color:var(--text);}
+.contact-link-item i{font-size:1.1rem;color:var(--sage);flex-shrink:0;}
+.contact-form-wrap{display:flex;flex-direction:column;gap:1rem;}
+.contact-form-wrap input,.contact-form-wrap textarea{background:white;border:1px solid var(--border);padding:0.7rem 1rem;font-family:'Jost',sans-serif;font-size:0.88rem;color:var(--text);outline:none;transition:border-color 0.2s;resize:none;width:100%;}
+.contact-form-wrap label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);margin-bottom:0.3rem;display:block;}
+
+/* ── FOOTER ── */
+footer{background:var(--text);color:rgba(255,255,255,0.45);padding:1.8rem 3.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(255,255,255,0.75);font-style:italic;}
+footer p{font-size:0.75rem;}
+.footer-login-link{font-size:0.7rem;color:rgba(255,255,255,0.22);cursor:pointer;text-decoration:underline;background:none;border:none;font-family:'Jost',sans-serif;}
+.footer-login-link:hover{color:rgba(255,255,255,0.5);}
+
+/* ── MODAL ── */
+.modal-bg{display:none;position:fixed;inset:0;z-index:500;background:rgba(42,36,32,0.62);align-items:center;justify-content:center;padding:1.2rem;}
+.modal-bg.open{display:flex;}
+.modal{background:var(--cream);max-width:580px;width:100%;max-height:92vh;overflow-y:auto;border:1px solid var(--border);position:relative;}
+.modal-close{position:absolute;top:0.9rem;right:0.9rem;background:none;border:none;font-size:1.1rem;cursor:pointer;color:var(--muted);}
+.modal-body{padding:1.8rem 2rem 2rem;}
+.modal-hed{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:1.2rem;}
+.mform{display:flex;flex-direction:column;gap:0.85rem;}
+.divider{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:0.25rem 0;border-bottom:1px solid var(--border);}
+.upload-area{border:1px dashed var(--border);background:var(--warm);padding:0.75rem;text-align:center;cursor:pointer;color:var(--muted);font-size:0.76rem;}
+.upload-area:hover{border-color:var(--sage);}
+.check-grid{display:flex;flex-wrap:wrap;gap:0.45rem;margin-top:0.2rem;}
+.check-item{position:relative;}
+.check-item input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0;}
+.check-item label{display:inline-block;padding:0.32rem 0.75rem;border:1.5px solid var(--border);background:white;font-size:0.76rem;font-family:'Jost',sans-serif;font-weight:500;color:var(--muted);cursor:pointer;user-select:none;transition:all 0.15s;line-height:1.4;}
+.check-item label:hover{border-color:var(--sage);color:var(--sage-dark);}
+.check-item input[type="checkbox"]:checked + label.atl-label{background:var(--atl-bg);color:var(--atl-text);border-color:var(--atl-text);}
+.check-item input[type="checkbox"]:checked + label.lp-label{background:var(--lp-bg);color:var(--lp-text);border-color:var(--lp-text);}
+
+/* ── REFERENCES ── */
+.ref-filters{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.ref-filter-btn{padding:0.3rem 1rem;border:1.5px solid var(--border);background:white;font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;cursor:pointer;color:var(--muted);transition:all 0.18s;}
+.ref-filter-btn.active{background:var(--text);color:white;border-color:var(--text);}
+.ref-filter-btn:hover:not(.active){border-color:var(--sage);color:var(--sage-dark);}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
+.ref-card{background:white;border:1px solid var(--border);padding:1.6rem;display:flex;flex-direction:column;gap:1rem;position:relative;transition:transform 0.2s,border-color 0.2s;}
+.ref-card:hover{transform:translateY(-2px);border-color:var(--sage);}
+.ref-card::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:3.5rem;color:var(--border);line-height:0.8;display:block;margin-bottom:0.2rem;}
+.ref-quote{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--text);line-height:1.6;font-style:italic;flex:1;}
+.ref-author{display:flex;flex-direction:column;gap:0.15rem;padding-top:0.8rem;border-top:1px solid var(--border);}
+.ref-name{font-size:0.82rem;font-weight:500;color:var(--text);letter-spacing:0.04em;}
+.ref-role{font-size:0.73rem;color:var(--muted);}
+.ref-category-badge{position:absolute;top:1rem;right:1rem;padding:0.15rem 0.55rem;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;border-radius:2px;}
+.cat-employer{background:#EAF3DE;color:#3B6D11;}
+.cat-colleague{background:#E1F5EE;color:#0F6E56;}
+.cat-parent{background:#FAEEDA;color:#854F0B;}
+.ref-delete-btn{display:none;position:absolute;bottom:0.8rem;right:0.8rem;background:none;border:none;color:var(--border);cursor:pointer;font-size:0.85rem;}
+.is-editor .ref-delete-btn{display:block;}
+.ref-delete-btn:hover{color:#A32D2D;}
+.add-ref-btn{display:none;align-items:center;gap:0.4rem;margin-top:1.8rem;padding:0.6rem 1.4rem;background:white;border:1px solid var(--border);font-family:'Jost',sans-serif;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;cursor:pointer;color:var(--muted);}
+.is-editor .add-ref-btn{display:inline-flex;}
+.add-ref-btn:hover{border-color:var(--sage);color:var(--sage-dark);}
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem 1.5rem;}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:block;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-right{display:none;}
+  .hero-left{padding:3.5rem 1.5rem;}
+  section{padding:3.5rem 1.5rem;}
+  #about .about-grid{grid-template-columns:1fr;gap:2rem;}
+  .about-photo-wrap{max-width:180px;}
+  .exp-item{grid-template-columns:1fr;gap:0.4rem;}
+  #contact .contact-grid{grid-template-columns:1fr;gap:2.5rem;}
+  footer{padding:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- LOGIN MODAL -->
+<div id="loginModal">
+  <div class="login-box">
+    <h3><span class="fr-only">Espace éditeur</span><span class="en-only">Editor login</span></h3>
+    <p><span class="fr-only">Entrez le mot de passe pour modifier le site</span><span class="en-only">Enter the password to edit the site</span></p>
+    <input type="password" id="pwInput" placeholder="• • • • • • • •" onkeydown="if(event.key==='Enter')tryLogin()">
+    <div class="login-error" id="loginError"><span class="fr-only">Mot de passe incorrect</span><span class="en-only">Incorrect password</span></div>
+    <div class="login-btns">
+      <button class="save-btn" onclick="tryLogin()"><span class="fr-only">Connexion</span><span class="en-only">Login</span></button>
+      <button class="cancel-btn" onclick="closeLoginModal()"><span class="fr-only">Annuler</span><span class="en-only">Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- EDITOR BAR -->
+<div id="editorBar">
+  <div class="editor-badge"><i class="fi fi-rr-edit"></i> <span class="fr-only">Mode éditeur actif</span><span class="en-only">Editor mode on</span></div>
+  <button id="lockBtn" onclick="logout()"><i class="fi fi-rr-lock"></i> <span class="fr-only">Verrouiller</span><span class="en-only">Lock</span></button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">Juliette <span>·</span> Portfolio</a>
+  <div class="nav-right">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home"><i class="fi fi-rr-home"></i> <span class="fr-only">Accueil</span><span class="en-only">Home</span></a></li>
+      <li><a href="#about"><i class="fi fi-rr-user"></i> <span class="fr-only">À propos</span><span class="en-only">About</span></a></li>
+      <li><a href="#experience"><i class="fi fi-rr-briefcase"></i> <span class="fr-only">Expérience</span><span class="en-only">Experience</span></a></li>
+      <li><a href="#learning"><i class="fi fi-rr-book-open-cover"></i> <span class="fr-only">Apprentissage</span><span class="en-only">Learning</span></a></li>
+      <li><a href="#references"><i class="fi fi-rr-quote-right"></i> <span class="fr-only">Références</span><span class="en-only">References</span></a></li>
+      <li><a href="#contact"><i class="fi fi-rr-envelope"></i> Contact</a></li>
+    </ul>
+    <!-- GLOBAL LANG TOGGLE -->
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="gBtnFR" onclick="setSiteLang('fr')">🇫🇷 FR</button>
+      <button class="lang-btn" id="gBtnEN" onclick="setSiteLang('en')">🇬🇧 EN</button>
+    </div>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fi fi-rr-menu-burger"></i></button>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<div id="home" class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="fr-only">Enseignante Early Years · IB PYP · CIS Singapour</span>
+      <span class="en-only">Early Years Bilingual Teacher · IB PYP · CIS Singapore</span>
+    </div>
+    <h1 class="hero-name">Juliette<br><em>Merchez</em></h1>
+    <p class="hero-subtitle">
+      <span class="fr-only">Enseignante bilingue — Petite Enfance · Programme FEb</span>
+      <span class="en-only">Bilingual Teacher — Early Years · FEb Programme</span>
+    </p>
+    <p class="hero-desc">
+      <span class="fr-only">Titulaire d'une classe bilingue français-anglais en Early Years, je guide de jeunes chercheurs curieux à travers le jeu, les langues et la découverte joyeuse du monde.</span>
+      <span class="en-only">Homeroom teacher in the French-English Bilingual Early Years programme at CIS Singapore, nurturing curious JK/SK learners through inquiry-based learning, bilingual immersion, and joyful discovery.</span>
+    </p>
+    <div class="hero-cta">
+      <a href="#learning" class="btn btn-primary"><i class="fi fi-rr-book-open-cover"></i> <span class="fr-only">Voir les apprentissages</span><span class="en-only">View Learning</span></a>
+      <a href="#contact" class="btn btn-outline"><i class="fi fi-rr-envelope"></i> Contact</a>
+      <button class="btn btn-outline editor-only btn-inline" onclick="openHeroEdit()"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-illustration">
+      <div class="lang-badge-row"><span class="lang-pill fr">Français</span><span class="lang-pill en">English</span></div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="stat-num">6</div><div class="stat-label"><span class="fr-only">Unités IB</span><span class="en-only">IB Units</span></div></div>
+        <div class="stat-card"><div class="stat-num">Bi</div><div class="stat-label"><span class="fr-only">Lingue</span><span class="en-only">Lingual</span></div></div>
+        <div class="stat-card"><div class="stat-num">IB</div><div class="stat-label">PYP</div></div>
+        <div class="stat-card"><div class="stat-num">EY</div><div class="stat-label"><span class="fr-only">Spécialiste</span><span class="en-only">Specialist</span></div></div>
+      </div>
+      <p class="decor-quote">
+        <span class="fr-only">« Chaque enfant est un chercheur — mon rôle est de lui donner les mots, dans toutes les langues, pour partager ce qu'il découvre. »</span>
+        <span class="en-only">"Every child is a researcher — my role is to give them the language, in every sense of the word, to share what they discover."</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <div class="section-title">
+      <h2><span class="fr-only">À propos</span><span class="en-only">About Me</span></h2>
+      <p><span class="fr-only">À propos de moi</span><span class="en-only">About me · À propos</span></p>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div class="about-photo-wrap">
+      <div class="photo-frame" id="photoFrame">
+        <div class="photo-empty"><i class="fi fi-rr-portrait"></i><span><span class="fr-only">Votre photo</span><span class="en-only">Your photo</span></span></div>
+      </div>
+      <button class="upload-photo-btn editor-only" onclick="document.getElementById('profilePhotoInput').click()"><i class="fi fi-rr-upload"></i> <span class="fr-only">Changer la photo</span><span class="en-only">Change photo</span></button>
+      <input type="file" id="profilePhotoInput" accept="image/*" style="display:none" onchange="handleProfilePhoto(event)">
+    </div>
+    <div>
+      <div class="about-name">Juliette Merchez</div>
+      <div class="about-role">
+        <span class="fr-only">Professeure Bilingue · Early Years · Programme FEb · CIS Singapour</span>
+        <span class="en-only">Bilingual Teacher · Early Years · FEb Programme · CIS Singapore</span>
+      </div>
+      <div>
+        <button class="section-edit-btn" onclick="openAboutEdit('fr')"><i class="fi fi-rr-edit"></i> Modifier FR</button>
+        <button class="section-edit-btn" onclick="openAboutEdit('en')"><i class="fi fi-rr-edit"></i> Edit EN</button>
+      </div>
+      <div class="edit-form" id="aboutEditForm">
+        <div id="editLangBadge" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;color:var(--muted);"></div>
+        <div class="form-field"><label>Bio</label><textarea id="eBio" rows="6"></textarea></div>
+        <div class="form-field"><label>Formation / Education</label><textarea id="eEdu" rows="5"></textarea></div>
+        <div class="form-field"><label>Compétences / Skills (virgules)</label><input type="text" id="eSkills"></div>
+        <div class="form-field"><label>Langues / Languages</label><textarea id="eLangs" rows="4"></textarea></div>
+        <div class="btn-row">
+          <button class="save-btn" onclick="saveAbout()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+          <button class="cancel-btn" onclick="closeAboutForm()"><span class="fr-only">Annuler</span><span class="en-only">Cancel</span></button>
+        </div>
+      </div>
+      <!-- FR VIEW -->
+      <div id="aboutViewFR" class="fr-only" style="display:block;">
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-id-badge"></i> Bio</div>
+          <div class="about-text" id="dispBioFR">
+            <p>Enseignante certifiée avec plus de 7 ans d'expérience dans des écoles internationales et francophones, spécialisée dans l'éducation bilingue et multiculturelle en Europe, au Moyen-Orient et en Asie.</p>
+            <p>J'enseigne actuellement une classe Early Years JK/SK dans le programme bilingue français-anglais (FEb) du Canadian International School de Singapour. Ma classe réunit des enfants aux profils linguistiques très variés — certains francophones, d'autres découvrant le français pour la première fois. Je différencie mon enseignement selon le niveau développemental (JK/SK) et selon le profil linguistique de chaque élève.</p>
+            <p>Mes leçons sont conçues pour être menées par la curiosité des enfants : inquiry-based, centrées sur la réflexion et le critical thinking. J'enseigne également les compétences socio-émotionnelles de manière explicite.</p>
+            <p>Auteure de « The Benefits of Early Years Learning in a Bilingual French-English Environment », publié par CIS dans Thoughts on Leadership (2024).</p>
+            <p>Chaque semaine, j'envoie aux familles un bilan d'apprentissage avec les objectifs et les photos de la classe.</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-diploma"></i> Formation & Diplômes</div>
+          <div class="about-text" id="dispEduFR">
+            <p>Master MEEF — ESPE Villeneuve d'Ascq, France (2017)</p>
+            <p>CRPE — Concours de recrutement des professeurs des écoles (2016)</p>
+            <p>Licence Économie-Gestion — Université Nationale de Chungnam, Corée du Sud (2014)</p>
+            <p>BAFA — Spécialité théâtre (2012)</p>
+            <p>Formation continue : Making the PYP Happen — CIS (2024) · Bilingual &amp; Multilingual Learners from the Inside-Out — CIS (2023)</p>
+            <p>Publication : « The Benefits of Early Years Learning in a Bilingual French-English Environment » — Thoughts on Leadership, CIS (2024)</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-star"></i> Compétences</div>
+          <div class="skill-tags" id="dispSkillsFR">
+            <span class="skill-tag">Enseignement bilingue FR-EN</span><span class="skill-tag">IB PYP Early Years</span><span class="skill-tag">Différenciation JK/SK</span><span class="skill-tag">Inquiry-based Learning</span><span class="skill-tag">Critical Thinking</span><span class="skill-tag">Enseignement socio-émotionnel</span><span class="skill-tag">Classes multiculturelles</span><span class="skill-tag">Conception de programmes bilingues</span><span class="skill-tag">Réseau de lecture</span><span class="skill-tag">Communication familles</span><span class="skill-tag">Leadership pédagogique</span>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-world"></i> Langues</div>
+          <div class="about-text" id="dispLangsFR">
+            <p>🇫🇷 Français — Langue maternelle</p>
+            <p>🇬🇧 Anglais — Courant · C1 · IELTS 7.5</p>
+            <p>🇰🇷 Coréen — Communication · B1</p>
+            <p>🇯🇵 Japonais &amp; 🇮🇹 Italien — Notions (lycée)</p>
+            <p>🇸🇦 Arabe &amp; 🇮🇳 Hindi — Apprentissage en cours</p>
+          </div>
+        </div>
+      </div>
+      <!-- EN VIEW -->
+      <div id="aboutViewEN" class="en-only" style="display:none;">
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-id-badge"></i> Bio</div>
+          <div class="about-text" id="dispBioEN">
+            <p>Certified teacher with over 7 years of experience in international and French-speaking schools, specialising in bilingual and multicultural education across Europe, the Middle East, and Asia.</p>
+            <p>I currently teach a JK/SK Early Years class in the French-English Bilingual (FEb) programme at the Canadian International School of Singapore. My class brings together children from a wide range of linguistic backgrounds — some francophone, others discovering French for the first time. I differentiate my teaching both by developmental stage (JK/SK) and by each child's linguistic profile.</p>
+            <p>My lessons are inquiry-based and child-led, encouraging curiosity, critical thinking, and a genuine love of learning. I also teach social-emotional skills explicitly, as I believe wellbeing and academic growth are inseparable.</p>
+            <p>Author of "The Benefits of Early Years Learning in a Bilingual French-English Environment", published by CIS in Thoughts on Leadership (2024).</p>
+            <p>Each week, I share a learning update with families — including learning intentions and classroom photos — keeping parents closely connected to their child's journey.</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-diploma"></i> Education & Qualifications</div>
+          <div class="about-text" id="dispEduEN">
+            <p>Master's in Education (MEEF) — ESPE Villeneuve d'Ascq, France (2017)</p>
+            <p>CRPE — French National Teaching Qualification (2016)</p>
+            <p>Bachelor's in Economics &amp; Management — Chungnam National University, South Korea (2014)</p>
+            <p>BAFA — Youth Work Qualification, Theatre specialisation (2012)</p>
+            <p>CPD: Making the PYP Happen — CIS (2024) · Bilingual &amp; Multilingual Learners from the Inside-Out — CIS (2023)</p>
+            <p>Publication: "The Benefits of Early Years Learning in a Bilingual French-English Environment" — Thoughts on Leadership, CIS (2024)</p>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-star"></i> Key Skills</div>
+          <div class="skill-tags" id="dispSkillsEN">
+            <span class="skill-tag">Bilingual FR-EN Teaching</span><span class="skill-tag">IB PYP Early Years</span><span class="skill-tag">JK/SK Differentiation</span><span class="skill-tag">Inquiry-based Learning</span><span class="skill-tag">Critical Thinking</span><span class="skill-tag">Social-Emotional Learning</span><span class="skill-tag">Multicultural Classrooms</span><span class="skill-tag">Bilingual Curriculum Design</span><span class="skill-tag">Reading Network Development</span><span class="skill-tag">Family Communication</span><span class="skill-tag">Pedagogical Leadership</span>
+          </div>
+        </div>
+        <div class="about-section">
+          <div class="about-section-title"><i class="fi fi-rr-world"></i> Languages</div>
+          <div class="about-text" id="dispLangsEN">
+            <p>🇫🇷 French — Native language</p>
+            <p>🇬🇧 English — Fluent · C1 · IELTS 7.5</p>
+            <p>🇰🇷 Korean — Communicative · B1</p>
+            <p>🇯🇵 Japanese &amp; 🇮🇹 Italian — Notions (high school)</p>
+            <p>🇸🇦 Arabic &amp; 🇮🇳 Hindi — Currently learning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EXPERIENCE ══════════ -->
+<section id="experience">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <div class="section-title">
+      <h2>Experience</h2>
+      <p><span class="fr-only">Parcours professionnel</span><span class="en-only">Professional background</span></p>
+    </div>
+  </div>
+  <div class="exp-list" id="expList">
+    <div class="exp-item">
+      <div class="exp-year">2023 — <span class="fr-only">Présent</span><span class="en-only">Present</span></div>
+      <div>
+        <div class="exp-role"><span class="fr-only">Professeure Bilingue Français-Anglais · Early Years (JK/SK)</span><span class="en-only">Bilingual French-English Teacher · Early Years (JK/SK)</span></div>
+        <div class="exp-school">Canadian International School (CIS) — Singapore</div>
+        <div class="exp-desc">
+          <span class="fr-only">Enseignement dans une classe bilingue JK/SK aux profils linguistiques variés. Différenciation selon le niveau et le profil linguistique. Responsable de la rédaction des programmes bilingues FEb pour les Early Years. Développement du réseau de lecture en français. Collaboration avec l'équipe marketing. Bilans d'apprentissage hebdomadaires aux familles. Approche inquiry-based, critical thinking et enseignement socio-émotionnel.</span>
+          <span class="en-only">Teaching a bilingual JK/SK class with diverse linguistic profiles. Differentiating by developmental stage and linguistic background. Lead author of the FEb bilingual curriculum for Early Years. Developing the French reading network. Collaborating with the marketing team to promote the FEb programme. Weekly learning updates to families. Inquiry-based, critical thinking and social-emotional learning approach.</span>
+        </div>
+        <div class="exp-tags"><span class="exp-tag">IB PYP</span><span class="exp-tag">Early Years</span><span class="exp-tag">Bilingue FEb</span><span class="exp-tag">Inquiry-based</span><span class="exp-tag">JK/SK</span></div>
+      </div>
+      <div class="exp-actions">
+        <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+        <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2020 — 2023</div>
+      <div>
+        <div class="exp-role"><span class="fr-only">Professeure des écoles · CM1</span><span class="en-only">Primary Teacher · Year 5</span></div>
+        <div class="exp-school">Lycée Libanais Francophone Privé Meydan (LLFPM) — Dubai</div>
+        <div class="exp-desc">
+          <span class="fr-only">Enseignement des programmes de l'Éducation Nationale. Enseignement artistique dans les classes du niveau. Renouvellement des progressions et programmations en équipe.</span>
+          <span class="en-only">Teaching the French National Education curriculum. Art education across the year group. Collaborative renewal of teaching progressions and schemes of work.</span>
+        </div>
+        <div class="exp-tags"><span class="exp-tag"><span class="fr-only">Éducation Nationale</span><span class="en-only">French Curriculum</span></span><span class="exp-tag">CM1</span><span class="exp-tag">Dubai</span></div>
+      </div>
+      <div class="exp-actions">
+        <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+        <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2019 — 2020</div>
+      <div>
+        <div class="exp-role"><span class="fr-only">Professeure des écoles · TPS/PS</span><span class="en-only">Early Years Teacher · Nursery/Reception</span></div>
+        <div class="exp-school">Lou Pichoun — Hong Kong</div>
+        <div class="exp-desc">
+          <span class="fr-only">Écriture du projet d'école et du PEAC. Création d'outils trilingues.</span>
+          <span class="en-only">Wrote the school project and arts & culture plan. Created trilingual teaching resources.</span>
+        </div>
+        <div class="exp-tags"><span class="exp-tag">TPS/PS</span><span class="exp-tag">Hong Kong</span><span class="exp-tag"><span class="fr-only">Trilingue</span><span class="en-only">Trilingual</span></span></div>
+      </div>
+      <div class="exp-actions">
+        <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+        <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2018 — 2019</div>
+      <div>
+        <div class="exp-role"><span class="fr-only">Professeure des écoles · MS/GS</span><span class="en-only">Early Years Teacher · MS/GS</span></div>
+        <div class="exp-school"><span class="fr-only">École maternelle Paul-Bert — Somain, France</span><span class="en-only">Paul-Bert Primary School — Somain, France</span></div>
+        <div class="exp-desc">
+          <span class="fr-only">Enseignement de l'anglais dans les classes du niveau. Co-enseignement des programmes de l'EN dans 3 classes.</span>
+          <span class="en-only">English language teaching across the year group. Co-teaching the national curriculum across 3 classes.</span>
+        </div>
+        <div class="exp-tags"><span class="exp-tag">MS/GS</span><span class="exp-tag">France</span></div>
+      </div>
+      <div class="exp-actions">
+        <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+        <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+      </div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-year">2017 — 2018</div>
+      <div>
+        <div class="exp-role"><span class="fr-only">Professeure des écoles · Classe unique CP–CM2</span><span class="en-only">Primary Teacher · Mixed-age class Year 1–6</span></div>
+        <div class="exp-school"><span class="fr-only">École de Reumont — Reumont, France</span><span class="en-only">Reumont School — Reumont, France</span></div>
+        <div class="exp-desc">
+          <span class="fr-only">Mise en place de projets culturels et artistiques locaux. Sensibilisation à l'écocitoyenneté. Correspondance postale avec une école britannique.</span>
+          <span class="en-only">Led local cultural and arts projects. Raised awareness of eco-citizenship. Established a postal exchange with a British school.</span>
+        </div>
+        <div class="exp-tags"><span class="exp-tag">CP–CM2</span><span class="exp-tag">France</span></div>
+      </div>
+      <div class="exp-actions">
+        <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+        <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+      </div>
+    </div>
+  </div>
+  <button class="add-exp-btn" onclick="openExpModal()"><i class="fi fi-rr-plus"></i> <span class="fr-only">Ajouter une expérience</span><span class="en-only">Add experience</span></button>
+</section>
+
+<!-- ══════════ LEARNING ══════════ -->
+<section id="learning">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <div class="section-title">
+      <h2><span class="fr-only">Expériences d'apprentissage</span><span class="en-only">Learning Experiences</span></h2>
+      <p>IB PYP · Early Years · <span class="fr-only">Classe bilingue JK/SK</span><span class="en-only">Bilingual JK/SK Class</span></p>
+    </div>
+  </div>
+  <div class="controls">
+    <span class="ctrl-label"><span class="fr-only">Unité</span><span class="en-only">Unit</span></span>
+    <div class="filter-pills" id="learnFilters"></div>
+    <button class="add-learning-btn editor-only" onclick="openLearningModal()"><i class="fi fi-rr-plus"></i> <span class="fr-only">Ajouter</span><span class="en-only">Add</span></button>
+  </div>
+  <div id="learnContent"></div>
+</section>
+
+<!-- ══════════ REFERENCES ══════════ -->
+<section id="references">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <div class="section-title">
+      <h2><span class="fr-only">Références</span><span class="en-only">References</span></h2>
+      <p><span class="fr-only">Ce que l'on dit de moi</span><span class="en-only">What people say about me</span></p>
+    </div>
+  </div>
+
+  <!-- CATEGORY FILTERS -->
+  <div class="ref-filters">
+    <button class="ref-filter-btn active" onclick="setRefFilter('all',this)">
+      <span class="fr-only">Tous</span><span class="en-only">All</span>
+    </button>
+    <button class="ref-filter-btn" onclick="setRefFilter('employer',this)">
+      <span class="fr-only">Employeurs</span><span class="en-only">Employers</span>
+    </button>
+    <button class="ref-filter-btn" onclick="setRefFilter('colleague',this)">
+      <span class="fr-only">Collègues</span><span class="en-only">Colleagues</span>
+    </button>
+    <button class="ref-filter-btn" onclick="setRefFilter('parent',this)">
+      <span class="fr-only">Parents</span><span class="en-only">Parents</span>
+    </button>
+  </div>
+
+  <div class="ref-grid" id="refGrid"></div>
+  <button class="add-ref-btn editor-only" onclick="openRefModal()">
+    <i class="fi fi-rr-plus"></i>
+    <span class="fr-only">Ajouter un témoignage</span><span class="en-only">Add a testimonial</span>
+  </button>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <div class="section-title">
+      <h2><span class="fr-only">Me contacter</span><span class="en-only">Get in Touch</span></h2>
+      <p>Contact · <span class="fr-only">Contactez-moi</span><span class="en-only">Get in touch</span></p>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro-text" id="contactIntro">
+        <span class="fr-only">Collaborons pour <em>construire quelque chose de beau</em> pour les jeunes apprenants.</span>
+        <span class="en-only">Let's connect and <em>build something wonderful</em> for young learners together.</span>
+      </p>
+      <p class="contact-sub">
+        <span class="fr-only">Que vous soyez une école à la recherche d'une enseignante bilingue passionnée, un parent avec des questions, ou un collègue souhaitant collaborer — je serais ravie d'échanger avec vous.</span>
+        <span class="en-only">Whether you're a school looking for a dedicated bilingual educator, a parent with questions, or a fellow teacher wanting to collaborate — I'd love to hear from you.</span>
+      </p>
+      <button class="section-edit-btn" style="margin-top:0.5rem;" onclick="openContactEdit()"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier les coordonnées</span><span class="en-only">Edit contact info</span></button>
+      <div class="edit-form" id="contactEditForm">
+        <div class="form-field"><label>Email</label><input type="text" id="cEmail"></div>
+        <div class="form-field"><label>LinkedIn URL</label><input type="text" id="cLinkedin"></div>
+        <div class="btn-row">
+          <button class="save-btn" onclick="saveContact()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+          <button class="cancel-btn" onclick="document.getElementById('contactEditForm').classList.remove('visible')"><span class="fr-only">Annuler</span><span class="en-only">Cancel</span></button>
+        </div>
+      </div>
+      <div class="contact-links" style="margin-top:1.5rem;">
+        <a id="contactEmailLink" href="mailto:juliette.merchez@gmail.com" class="contact-link-item">
+          <i class="fi fi-rr-envelope"></i>
+          <div><span class="contact-link-label">Email</span><span class="contact-link-value" id="contactEmailVal">juliette.merchez@gmail.com</span></div>
+        </a>
+        <a id="contactLinkedinLink" href="https://www.linkedin.com/in/juliette-merchez-28120032b/" class="contact-link-item" target="_blank">
+          <i class="fi fi-rr-world"></i>
+          <div><span class="contact-link-label">LinkedIn</span><span class="contact-link-value" id="contactLinkedinVal">linkedin.com/in/juliette-merchez</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <div><label><span class="fr-only">Votre nom</span><span class="en-only">Your name</span></label><input type="text" placeholder="Marie Dupont"></div>
+      <div><label>Email</label><input type="email" placeholder="marie@example.com"></div>
+      <div><label>Message</label><textarea rows="5" placeholder="Bonjour Juliette… / Hello Juliette…"></textarea></div>
+      <button class="btn btn-primary" style="align-self:flex-start;"><i class="fi fi-rr-paper-plane"></i> <span class="fr-only">Envoyer</span><span class="en-only">Send</span></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Juliette Merchez</div>
+  <p><span class="fr-only">© 2026 · Enseignante bilingue · Early Years · IB PYP · CIS Singapour</span><span class="en-only">© 2026 · Bilingual Teacher · Early Years · IB PYP · CIS Singapore</span></p>
+  <button class="footer-login-link" onclick="openLoginModal()"><span class="fr-only">Connexion éditeur</span><span class="en-only">Editor login</span></button>
+</footer>
+
+<!-- ══ HERO EDIT MODAL ══ -->
+<div class="modal-bg" id="heroModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('heroModal')">✕</button>
+    <div class="modal-body">
+      <div class="modal-hed"><span class="fr-only">Modifier l'introduction</span><span class="en-only">Edit introduction</span></div>
+      <div class="mform">
+        <div class="form-field"><label>Prénom / First name</label><input type="text" id="hFirst" placeholder="Juliette"></div>
+        <div class="form-field"><label>Nom / Last name</label><input type="text" id="hLast" placeholder="Merchez"></div>
+        <div class="form-field"><label>Accroche FR</label><input type="text" id="hEyebrowFR"></div>
+        <div class="form-field"><label>Accroche EN</label><input type="text" id="hEyebrowEN"></div>
+        <div class="form-field"><label>Sous-titre FR</label><input type="text" id="hSubtitleFR"></div>
+        <div class="form-field"><label>Subtitle EN</label><input type="text" id="hSubtitleEN"></div>
+        <div class="form-field"><label>Description FR</label><textarea id="hDescFR" rows="3"></textarea></div>
+        <div class="form-field"><label>Description EN</label><textarea id="hDescEN" rows="3"></textarea></div>
+        <div class="form-field"><label>Citation FR</label><input type="text" id="hQuoteFR"></div>
+        <div class="form-field"><label>Quote EN</label><input type="text" id="hQuoteEN"></div>
+        <button class="save-btn" onclick="saveHero()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXP EDIT MODAL ══ -->
+<div class="modal-bg" id="expEditModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('expEditModal')">✕</button>
+    <div class="modal-body">
+      <div class="modal-hed"><span class="fr-only">Modifier l'expérience</span><span class="en-only">Edit experience</span></div>
+      <div class="mform">
+        <div class="form-field"><label><span class="fr-only">Années</span><span class="en-only">Years</span></label><input type="text" id="eeYears"></div>
+        <div class="form-field"><label><span class="fr-only">Rôle FR</span><span class="en-only">Role FR</span></label><input type="text" id="eeRoleFR"></div>
+        <div class="form-field"><label>Role EN</label><input type="text" id="eeRoleEN"></div>
+        <div class="form-field"><label><span class="fr-only">École</span><span class="en-only">School</span></label><input type="text" id="eeSchool"></div>
+        <div class="form-field"><label><span class="fr-only">Description FR</span><span class="en-only">Description FR</span></label><textarea id="eeDescFR" rows="4"></textarea></div>
+        <div class="form-field"><label>Description EN</label><textarea id="eeDescEN" rows="4"></textarea></div>
+        <div class="form-field"><label><span class="fr-only">Étiquettes (virgules)</span><span class="en-only">Tags (commas)</span></label><input type="text" id="eeTags"></div>
+        <button class="save-btn" onclick="saveEditExp()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXP ADD MODAL ══ -->
+<div class="modal-bg" id="expModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('expModal')">✕</button>
+    <div class="modal-body">
+      <div class="modal-hed"><span class="fr-only">Ajouter une expérience</span><span class="en-only">Add experience</span></div>
+      <div class="mform">
+        <div class="form-field"><label><span class="fr-only">Années</span><span class="en-only">Years</span></label><input type="text" id="mExpYears" placeholder="2020 — 2022"></div>
+        <div class="form-field"><label><span class="fr-only">Rôle FR</span><span class="en-only">Role FR</span></label><input type="text" id="mExpRoleFR"></div>
+        <div class="form-field"><label>Role EN</label><input type="text" id="mExpRoleEN"></div>
+        <div class="form-field"><label><span class="fr-only">École / Organisation</span><span class="en-only">School / Organisation</span></label><input type="text" id="mExpSchool"></div>
+        <div class="form-field"><label><span class="fr-only">Description FR</span><span class="en-only">Description FR</span></label><textarea id="mExpDescFR" rows="3"></textarea></div>
+        <div class="form-field"><label>Description EN</label><textarea id="mExpDescEN" rows="3"></textarea></div>
+        <div class="form-field"><label><span class="fr-only">Étiquettes (virgules)</span><span class="en-only">Tags (commas)</span></label><input type="text" id="mExpTags"></div>
+        <button class="save-btn" onclick="submitExp()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REFERENCES MODAL ══ -->
+<div class="modal-bg" id="refModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('refModal')">✕</button>
+    <div class="modal-body">
+      <div class="modal-hed">
+        <span class="fr-only">Ajouter un témoignage</span><span class="en-only">Add a testimonial</span>
+      </div>
+      <div class="mform">
+        <div class="form-field">
+          <label><span class="fr-only">Catégorie</span><span class="en-only">Category</span></label>
+          <select id="rCat">
+            <option value="employer"><span class="fr-only">Employeur</span><span class="en-only">Employer</span></option>
+            <option value="colleague"><span class="fr-only">Collègue</span><span class="en-only">Colleague</span></option>
+            <option value="parent">Parent</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label><span class="fr-only">Citation (français)</span><span class="en-only">Quote (French)</span></label>
+          <textarea id="rQuoteFR" rows="4" placeholder="« Juliette est une enseignante exceptionnelle… »"></textarea>
+        </div>
+        <div class="form-field">
+          <label>Quote (English)</label>
+          <textarea id="rQuoteEN" rows="4" placeholder="Juliette is an exceptional teacher…"></textarea>
+        </div>
+        <div class="form-field">
+          <label><span class="fr-only">Nom complet</span><span class="en-only">Full name</span></label>
+          <input type="text" id="rName" placeholder="Marie Dupont">
+        </div>
+        <div class="form-field">
+          <label><span class="fr-only">Rôle / Titre (français)</span><span class="en-only">Role / Title (French)</span></label>
+          <input type="text" id="rRoleFR" placeholder="Directrice · CIS Singapour">
+        </div>
+        <div class="form-field">
+          <label>Role / Title (English)</label>
+          <input type="text" id="rRoleEN" placeholder="Head of School · CIS Singapore">
+        </div>
+        <button class="save-btn" onclick="submitRef()">
+          <span class="fr-only">Enregistrer</span><span class="en-only">Save</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ LEARNING MODAL ══ -->
+<div class="modal-bg" id="learningModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('learningModal')">✕</button>
+    <div class="modal-body">
+      <div class="modal-hed"><span class="fr-only">Nouvelle expérience d'apprentissage</span><span class="en-only">New Learning Experience</span></div>
+      <div class="mform">
+        <div class="form-field"><label><span class="fr-only">Unité d'investigation</span><span class="en-only">Unit of Inquiry</span></label><select id="mUoi"></select></div>
+        <div class="form-field"><label><span class="fr-only">Langue d'enseignement</span><span class="en-only">Language of instruction</span></label>
+          <select id="mLang"><option value="en">English</option><option value="fr">Français</option></select>
+        </div>
+        <div class="form-field"><label><span class="fr-only">Intention d'apprentissage</span><span class="en-only">Learning intention</span></label><textarea id="mInt" rows="3" placeholder="We are learning to… / Nous apprenons à…"></textarea></div>
+        <div class="form-field"><label><span class="fr-only">Vocabulaire UOI (virgules)</span><span class="en-only">UOI Vocabulary (commas)</span></label><input type="text" id="mVocab"></div>
+        <div class="form-field"><label><span class="fr-only">Mots fréquents / Sight words</span><span class="en-only">Sight words / Mots fréquents</span></label><input type="text" id="mSight"></div>
+        <div class="form-field"><label>Photo</label>
+          <div class="upload-area" onclick="document.getElementById('mPhoto').click()"><div id="mPhotoLbl"><i class="fi fi-rr-picture"></i> <span class="fr-only">Cliquer pour importer</span><span class="en-only">Click to upload</span></div></div>
+          <input type="file" id="mPhoto" accept="image/*" style="display:none" onchange="handleModalPhoto(event)">
+          <img id="mPhotoPreview" style="display:none;width:100%;max-height:160px;object-fit:cover;margin-top:0.5rem;border:1px solid var(--border);">
+        </div>
+        <div class="divider"><span class="fr-only">Cadre IB</span><span class="en-only">IB Framework</span></div>
+        <div class="form-field"><label><span class="fr-only">Approches pour apprendre (ATL)</span><span class="en-only">Approaches to Learning (ATL)</span></label><div class="check-grid" id="mAtlGrid"></div></div>
+        <div class="form-field"><label><span class="fr-only">Profil de l'apprenant (LP)</span><span class="en-only">Learner Profile (LP)</span></label><div class="check-grid" id="mLpGrid"></div></div>
+        <button class="save-btn" onclick="submitLearning()"><span class="fr-only">Enregistrer</span><span class="en-only">Save</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ──
+const EDITOR_PASSWORD_HASH="b02265e83ea71148dd09fea2d72d01f468c0169e631814a6515fb3b30331fdac";
+const ATL=["Thinking","Communication","Social","Self-management","Research"];
+const LP=["Inquirer","Knowledgeable","Thinker","Communicator","Principled","Open-minded","Caring","Risk-taker","Balanced","Reflective"];
+const UOIS=[
+  {key:"place",  name:"Where We Are in Place and Time", fr:"Où nous nous situons dans l'espace et le temps", cls:"uoi-place",   icon:"fi fi-rr-globe",      dark:"#0C447C",mid:"#378ADD"},
+  {key:"who",    name:"Who We Are",                     fr:"Qui nous sommes",                               cls:"uoi-who",    icon:"fi fi-rr-users",      dark:"#712B13",mid:"#D85A30"},
+  {key:"planet", name:"Sharing the Planet",             fr:"Le partage de la planète",                      cls:"uoi-planet", icon:"fi fi-rr-leaf",       dark:"#27500A",mid:"#639922"},
+  {key:"express",name:"How We Express Ourselves",       fr:"Comment nous nous exprimons",                   cls:"uoi-express",icon:"fi fi-rr-paint-brush", dark:"#633806",mid:"#BA7517"},
+  {key:"org",    name:"How We Organize Ourselves",      fr:"Comment nous nous organisons",                  cls:"uoi-organize",icon:"fi fi-rr-apps",      dark:"#3C3489",mid:"#7F77DD"},
+  {key:"works",  name:"How the World Works",            fr:"Comment le monde fonctionne",                   cls:"uoi-works",  icon:"fi fi-rr-settings",   dark:"#085041",mid:"#1D9E75"},
+];
+function getUoi(n){return UOIS.find(u=>u.name===n)||UOIS[0];}
+
+// ── STATE ──
+let siteLang='fr';
+let learnFilter="All";
+let pendingPhoto=null;
+let learnNextId=3;
+let currentEditItem=null;
+let currentAboutLang='fr';
+
+let learningExps=[
+  {id:1,uoi:"Sharing the Planet",lang:"en",intention:"We are learning to observe how living things depend on their environment.",vocab:["habitat","living","depend"],sight:["the","can","we"],photo:null,atl:["Thinking","Research"],lp:["Inquirer","Caring"]},
+  {id:2,uoi:"How We Express Ourselves",lang:"fr",intention:"Nous apprenons à raconter une histoire avec des images et des mots.",vocab:["histoire","séquence","début"],sight:["d'abord","ensuite"],photo:null,atl:["Communication","Thinking"],lp:["Communicator","Risk-taker"]},
+];
+
+// ── SITE LANGUAGE ──
+function setSiteLang(lang){
+  siteLang=lang;
+  document.body.classList.toggle('lang-en', lang==='en');
+  document.getElementById('gBtnFR').classList.toggle('active', lang==='fr');
+  document.getElementById('gBtnEN').classList.toggle('active', lang==='en');
+  // sync about views
+  document.getElementById('aboutViewFR').style.display = lang==='fr'?'block':'none';
+  document.getElementById('aboutViewEN').style.display = lang==='en'?'block':'none';
+  // update html lang attr
+  document.documentElement.lang = lang;
+}
+
+// ── AUTH ──
+async function hashPassword(pw){
+  const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(pw));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+function openLoginModal(){document.getElementById("loginModal").classList.add("open");document.getElementById("pwInput").value="";document.getElementById("loginError").style.display="none";setTimeout(()=>document.getElementById("pwInput").focus(),100);}
+function closeLoginModal(){document.getElementById("loginModal").classList.remove("open");}
+function tryLogin(){
+  hashPassword(document.getElementById("pwInput").value).then(hash=>{
+    if(hash===EDITOR_PASSWORD_HASH){
+      document.body.classList.add("is-editor");
+      document.getElementById("editorBar").classList.add("visible");
+      closeLoginModal();
+    } else {
+      document.getElementById("loginError").style.display="block";
+      document.getElementById("pwInput").value="";
+      document.getElementById("pwInput").focus();
+    }
+  });
+}
+function logout(){document.body.classList.remove("is-editor");document.getElementById("editorBar").classList.remove("visible");}
+
+// ── LIGHTBOX ──
+function openLightbox(src){document.getElementById("lightboxImg").src=src;document.getElementById("lightbox").classList.add("open");}
+function closeLightbox(){document.getElementById("lightbox").classList.remove("open");}
+document.getElementById("lightbox").addEventListener("click",function(e){if(e.target===this)closeLightbox();});
+
+// ── PROFILE PHOTO ──
+function handleProfilePhoto(ev){
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{document.getElementById("photoFrame").innerHTML=`<img src="${e.target.result}" alt="Profile" style="cursor:zoom-in" onclick="openLightbox('${e.target.result}')">`;};
+  r.readAsDataURL(f);
+}
+
+// ── HERO EDIT ──
+function openHeroEdit(){
+  document.getElementById("heroModal").classList.add("open");
+}
+function saveHero(){
+  closeModal("heroModal");
+}
+
+// ── ABOUT EDIT ──
+let aboutData={
+  fr:{
+    bio:"Enseignante certifiée avec plus de 7 ans d'expérience dans des écoles internationales et francophones, spécialisée dans l'éducation bilingue et multiculturelle en Europe, au Moyen-Orient et en Asie.\n\nJ'enseigne actuellement une classe Early Years JK/SK dans le programme bilingue français-anglais (FEb) du Canadian International School de Singapour.",
+    edu:"Master MEEF — ESPE Villeneuve d'Ascq, France (2017)\nCRPE (2016)\nLicence Économie-Gestion — Université Nationale de Chungnam, Corée du Sud (2014)\nBAFA — Spécialité théâtre (2012)\n\nFormation continue : Making the PYP Happen — CIS (2024) · Bilingual & Multilingual Learners from the Inside-Out — CIS (2023)\nPublication : Thoughts on Leadership, CIS (2024)",
+    skills:"Enseignement bilingue FR-EN,IB PYP Early Years,Différenciation JK/SK,Inquiry-based Learning,Critical Thinking,Enseignement socio-émotionnel,Classes multiculturelles,Conception de programmes bilingues,Réseau de lecture,Communication familles,Leadership pédagogique",
+    langs:"🇫🇷 Français — Langue maternelle\n🇬🇧 Anglais — Courant · C1 · IELTS 7.5\n🇰🇷 Coréen — Communication · B1\n🇯🇵 Japonais & 🇮🇹 Italien — Notions (lycée)\n🇸🇦 Arabe & 🇮🇳 Hindi — Apprentissage en cours"
+  },
+  en:{
+    bio:"Certified teacher with over 7 years of experience in international and French-speaking schools, specialising in bilingual and multicultural education across Europe, the Middle East, and Asia.\n\nI currently teach a JK/SK Early Years class in the French-English Bilingual (FEb) programme at the Canadian International School of Singapore.",
+    edu:"Master's in Education (MEEF) — ESPE Villeneuve d'Ascq, France (2017)\nCRPE — French National Teaching Qualification (2016)\nBachelor's in Economics & Management — Chungnam National University, South Korea (2014)\nBAFA — Youth Work Qualification, Theatre (2012)\n\nCPD: Making the PYP Happen — CIS (2024) · Bilingual & Multilingual Learners — CIS (2023)\nPublication: Thoughts on Leadership, CIS (2024)",
+    skills:"Bilingual FR-EN Teaching,IB PYP Early Years,JK/SK Differentiation,Inquiry-based Learning,Critical Thinking,Social-Emotional Learning,Multicultural Classrooms,Bilingual Curriculum Design,Reading Network Development,Family Communication,Pedagogical Leadership",
+    langs:"🇫🇷 French — Native language\n🇬🇧 English — Fluent · C1 · IELTS 7.5\n🇰🇷 Korean — Communicative · B1\n🇯🇵 Japanese & 🇮🇹 Italian — Notions (high school)\n🇸🇦 Arabic & 🇮🇳 Hindi — Currently learning"
+  }
+};
+
+function openAboutEdit(lang){
+  currentAboutLang=lang;
+  document.getElementById("editLangBadge").textContent="Édition — "+(lang==='fr'?"Version Française 🇫🇷":"English Version 🇬🇧");
+  document.getElementById("eBio").value=aboutData[lang].bio;
+  document.getElementById("eEdu").value=aboutData[lang].edu;
+  document.getElementById("eSkills").value=aboutData[lang].skills;
+  document.getElementById("eLangs").value=aboutData[lang].langs;
+  document.getElementById("aboutEditForm").classList.add("visible");
+  document.getElementById('aboutViewFR').style.opacity="0.4";
+  document.getElementById('aboutViewEN').style.opacity="0.4";
+}
+function saveAbout(){
+  const lang=currentAboutLang;
+  aboutData[lang].bio=document.getElementById("eBio").value||aboutData[lang].bio;
+  aboutData[lang].edu=document.getElementById("eEdu").value||aboutData[lang].edu;
+  aboutData[lang].skills=document.getElementById("eSkills").value||aboutData[lang].skills;
+  aboutData[lang].langs=document.getElementById("eLangs").value||aboutData[lang].langs;
+  const sfx=lang==='fr'?'FR':'EN';
+  document.getElementById("dispBio"+sfx).innerHTML=aboutData[lang].bio.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');
+  document.getElementById("dispEdu"+sfx).innerHTML=aboutData[lang].edu.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');
+  document.getElementById("dispSkills"+sfx).innerHTML=aboutData[lang].skills.split(',').map(s=>s.trim()).filter(Boolean).map(s=>`<span class="skill-tag">${s}</span>`).join('');
+  document.getElementById("dispLangs"+sfx).innerHTML=aboutData[lang].langs.split('\n').filter(l=>l.trim()).map(l=>`<p>${l}</p>`).join('');
+  closeAboutForm();
+}
+function closeAboutForm(){
+  document.getElementById("aboutEditForm").classList.remove("visible");
+  document.getElementById('aboutViewFR').style.opacity="1";
+  document.getElementById('aboutViewEN').style.opacity="1";
+}
+
+// ── CONTACT EDIT ──
+let contactData={email:"juliette.merchez@gmail.com",linkedin:"linkedin.com/in/juliette-merchez"};
+function openContactEdit(){
+  document.getElementById("cEmail").value=contactData.email;
+  document.getElementById("cLinkedin").value=contactData.linkedin;
+  document.getElementById("contactEditForm").classList.add("visible");
+}
+function saveContact(){
+  const email=document.getElementById("cEmail").value.trim();
+  const li=document.getElementById("cLinkedin").value.trim();
+  if(email){contactData.email=email;document.getElementById("contactEmailVal").textContent=email;document.getElementById("contactEmailLink").href="mailto:"+email;}
+  if(li){contactData.linkedin=li;document.getElementById("contactLinkedinVal").textContent=li;document.getElementById("contactLinkedinLink").href="https://"+li.replace(/^https?:\/\//,'');}
+  document.getElementById("contactEditForm").classList.remove("visible");
+}
+
+// ── EXPERIENCE MODALS ──
+function openExpModal(){
+  ["mExpYears","mExpRoleFR","mExpRoleEN","mExpSchool","mExpDescFR","mExpDescEN","mExpTags"].forEach(id=>{document.getElementById(id).value="";});
+  document.getElementById("expModal").classList.add("open");
+}
+function submitExp(){
+  const y=document.getElementById("mExpYears").value.trim();
+  const rFR=document.getElementById("mExpRoleFR").value.trim();
+  if(!y||!rFR){alert(siteLang==='fr'?"Veuillez renseigner les années et le rôle.":"Please fill in years and role.");return;}
+  const rEN=document.getElementById("mExpRoleEN").value.trim();
+  const s=document.getElementById("mExpSchool").value.trim();
+  const dFR=document.getElementById("mExpDescFR").value.trim();
+  const dEN=document.getElementById("mExpDescEN").value.trim();
+  const tags=document.getElementById("mExpTags").value.split(',').map(x=>x.trim()).filter(Boolean);
+  const item=document.createElement('div');item.className='exp-item';
+  item.innerHTML=`<div class="exp-year">${y}</div><div>
+    <div class="exp-role"><span class="fr-only">${rFR}</span><span class="en-only">${rEN||rFR}</span></div>
+    ${s?`<div class="exp-school">${s}</div>`:''}
+    ${dFR?`<div class="exp-desc"><span class="fr-only">${dFR}</span><span class="en-only">${dEN||dFR}</span></div>`:''}
+    ${tags.length?`<div class="exp-tags">${tags.map(t=>`<span class="exp-tag">${t}</span>`).join('')}</div>`:''}
+  </div><div class="exp-actions">
+    <button class="exp-action-btn" onclick="openEditExp(this.closest('.exp-item'))"><i class="fi fi-rr-edit"></i> <span class="fr-only">Modifier</span><span class="en-only">Edit</span></button>
+    <button class="exp-action-btn del" onclick="this.closest('.exp-item').remove()"><i class="fi fi-rr-trash"></i></button>
+  </div>`;
+  document.getElementById("expList").insertBefore(item,document.getElementById("expList").firstChild);
+  closeModal("expModal");
+}
+function openEditExp(item){
+  currentEditItem=item;
+  document.getElementById("eeYears").value=item.querySelector('.exp-year')?.textContent.trim()||'';
+  const roleEl=item.querySelector('.exp-role');
+  document.getElementById("eeRoleFR").value=roleEl?.querySelector('.fr-only')?.textContent.trim()||roleEl?.textContent.trim()||'';
+  document.getElementById("eeRoleEN").value=roleEl?.querySelector('.en-only')?.textContent.trim()||'';
+  document.getElementById("eeSchool").value=item.querySelector('.exp-school')?.textContent.trim()||'';
+  const descEl=item.querySelector('.exp-desc');
+  document.getElementById("eeDescFR").value=descEl?.querySelector('.fr-only')?.textContent.trim()||descEl?.textContent.trim()||'';
+  document.getElementById("eeDescEN").value=descEl?.querySelector('.en-only')?.textContent.trim()||'';
+  document.getElementById("eeTags").value=Array.from(item.querySelectorAll('.exp-tag')).map(t=>t.textContent.trim()).join(', ');
+  document.getElementById("expEditModal").classList.add("open");
+}
+function saveEditExp(){
+  if(!currentEditItem)return;
+  const y=document.getElementById("eeYears").value.trim();
+  const rFR=document.getElementById("eeRoleFR").value.trim();
+  if(!y||!rFR){alert(siteLang==='fr'?"Veuillez renseigner les années et le rôle.":"Please fill in years and role.");return;}
+  const rEN=document.getElementById("eeRoleEN").value.trim();
+  const s=document.getElementById("eeSchool").value.trim();
+  const dFR=document.getElementById("eeDescFR").value.trim();
+  const dEN=document.getElementById("eeDescEN").value.trim();
+  const tags=document.getElementById("eeTags").value.split(',').map(x=>x.trim()).filter(Boolean);
+  currentEditItem.querySelector('.exp-year').textContent=y;
+  const roleEl=currentEditItem.querySelector('.exp-role');
+  if(roleEl){
+    const frS=roleEl.querySelector('.fr-only')||Object.assign(document.createElement('span'),{className:'fr-only'});
+    const enS=roleEl.querySelector('.en-only')||Object.assign(document.createElement('span'),{className:'en-only'});
+    frS.textContent=rFR;enS.textContent=rEN||rFR;
+    roleEl.innerHTML='';roleEl.appendChild(frS);roleEl.appendChild(enS);
+  }
+  let schoolEl=currentEditItem.querySelector('.exp-school');
+  if(s){if(!schoolEl){schoolEl=document.createElement('div');schoolEl.className='exp-school';currentEditItem.children[1].insertBefore(schoolEl,currentEditItem.querySelector('.exp-desc'));}schoolEl.textContent=s;}
+  else if(schoolEl)schoolEl.remove();
+  let descEl=currentEditItem.querySelector('.exp-desc');
+  if(dFR){
+    if(!descEl){descEl=document.createElement('div');descEl.className='exp-desc';currentEditItem.children[1].appendChild(descEl);}
+    descEl.innerHTML=`<span class="fr-only">${dFR}</span><span class="en-only">${dEN||dFR}</span>`;
+  } else if(descEl)descEl.remove();
+  let tagsEl=currentEditItem.querySelector('.exp-tags');
+  if(tags.length){if(!tagsEl){tagsEl=document.createElement('div');tagsEl.className='exp-tags';currentEditItem.children[1].appendChild(tagsEl);}tagsEl.innerHTML=tags.map(t=>`<span class="exp-tag">${t}</span>`).join('');}
+  else if(tagsEl)tagsEl.remove();
+  currentEditItem=null;
+  closeModal("expEditModal");
+}
+
+// ── LEARNING ──
+function learnUoisPresent(){return["All",...new Set(learningExps.map(e=>e.uoi))];}
+function renderFilters(){
+  document.getElementById("learnFilters").innerHTML=learnUoisPresent().map(u=>{
+    const active=learnFilter===u;
+    const uoi=u==="All"?null:getUoi(u);
+    const bg=uoi&&active?`background:${uoi.dark};color:white;border-color:${uoi.dark};`:active?"background:var(--sage-dark);color:white;border-color:var(--sage-dark);":"";
+    const icon=uoi?`<i class="${uoi.icon}"></i>`:"";
+    const label=u==="All"?(siteLang==='fr'?"Toutes":"All"):(u.length>22?u.substring(0,20)+"…":u);
+    return`<button class="pill ${active?'active':''}" style="${bg}" onclick="setFilter('${u}')">${icon}${label}</button>`;
+  }).join('');
+}
+function setFilter(u){learnFilter=u;renderFilters();renderLearn();}
+function renderLearn(){
+  const filtered=learnFilter==="All"?learningExps:learningExps.filter(e=>e.uoi===learnFilter);
+  const uois=[...new Set(filtered.map(e=>e.uoi))];
+  if(!uois.length){document.getElementById("learnContent").innerHTML=`<p style="color:var(--muted);padding-top:1rem;font-size:0.9rem;"><span class="fr-only">Aucune expérience — cliquez sur "Ajouter" pour commencer.</span><span class="en-only">No experiences yet — click "Add" to get started.</span></p>`;return;}
+  document.getElementById("learnContent").innerHTML=uois.map(uoi=>{
+    const u=getUoi(uoi);
+    return`<div class="uoi-group ${u.cls}">
+      <div class="uoi-header"><i class="${u.icon} uoi-icon"></i><div><div class="uoi-name">${uoi}</div><div class="uoi-sub">${u.fr}</div></div></div>
+      <div class="cards-grid">${filtered.filter(e=>e.uoi===uoi).map(e=>cardHTML(e,u)).join('')}</div>
+    </div>`;
+  }).join('');
+}
+function cardHTML(e,u){
+  const badge=e.lang==='fr'
+    ?`<span class="card-lang-badge fr"><i class="fi fi-rr-flag-alt"></i> Semaine Française</span>`
+    :`<span class="card-lang-badge en"><i class="fi fi-rr-flag-usa"></i> English Week</span>`;
+  const thumb=e.photo
+    ?`<div class="card-thumb-wrap" onclick="openLightbox('${e.photo}')"><img src="${e.photo}" alt=""><span class="zoom-hint">🔍 <span class="fr-only">agrandir</span><span class="en-only">enlarge</span></span></div>`
+    :`<div class="card-thumb-wrap" style="cursor:default"><div class="card-thumb-placeholder ${u.cls}"><i class="fi fi-rr-picture"></i><span><span class="fr-only">Pas encore de photo</span><span class="en-only">No photo yet</span></span></div></div>`;
+  const vocab=(e.vocab||[]).map(v=>`<span class="vocab-chip uv ${u.cls}">${v}</span>`).join('');
+  const sight=(e.sight||[]).map(v=>`<span class="vocab-chip sw">${v}</span>`).join('');
+  const atl=(e.atl||[]).map(a=>`<span class="tag tag-atl">${a}</span>`).join('');
+  const lp=(e.lp||[]).map(l=>`<span class="tag tag-lp">${l}</span>`).join('');
+  return`<div class="learn-card ${u.cls}" data-id="${e.id}">
+    <div class="card-accent"></div>
+    <button class="card-delete-btn editor-only" onclick="deleteCard(${e.id})"><i class="fi fi-rr-trash"></i></button>
+    ${thumb}
+    <div class="card-body">${badge}<div class="card-intention">${e.intention}</div>${vocab||sight?`<div class="card-vocab">${vocab}${sight}</div>`:''}</div>
+    <div class="card-footer"><span class="footer-label">IB</span>${atl}${lp}</div>
+  </div>`;
+}
+function deleteCard(id){
+  if(!confirm(siteLang==='fr'?"Supprimer cette expérience ?":"Delete this experience?"))return;
+  learningExps=learningExps.filter(e=>e.id!==id);renderFilters();renderLearn();
+}
+
+// ── LEARNING MODAL ──
+function buildCheckGrid(cid,items,labelClass){
+  document.getElementById(cid).innerHTML=items.map((item,i)=>{
+    const id=cid+'_'+i;
+    return`<div class="check-item"><input type="checkbox" id="${id}" value="${item}"><label for="${id}" class="${labelClass}">${item}</label></div>`;
+  }).join('');
+}
+function getChecked(cid){return Array.from(document.querySelectorAll(`#${cid} input:checked`)).map(c=>c.value);}
+function handleModalPhoto(ev){
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{pendingPhoto=e.target.result;document.getElementById("mPhotoLbl").innerHTML=`<i class="fi fi-rr-check"></i> ✓`;const p=document.getElementById("mPhotoPreview");p.src=e.target.result;p.style.display="block";};
+  r.readAsDataURL(f);
+}
+function openLearningModal(){
+  pendingPhoto=null;
+  document.getElementById("mUoi").innerHTML=`<option value="">${siteLang==='fr'?'Sélectionner…':'Select…'}</option>`+UOIS.map(u=>`<option value="${u.name}">${u.name}</option>`).join('');
+  document.getElementById("mLang").value="en";
+  ["mInt","mVocab","mSight"].forEach(id=>{document.getElementById(id).value="";});
+  document.getElementById("mPhotoLbl").innerHTML=`<i class="fi fi-rr-picture"></i> ${siteLang==='fr'?'Cliquer pour importer':'Click to upload'}`;
+  document.getElementById("mPhotoPreview").style.display="none";
+  document.getElementById("mPhoto").value="";
+  buildCheckGrid("mAtlGrid",ATL,"atl-label");
+  buildCheckGrid("mLpGrid",LP,"lp-label");
+  document.getElementById("learningModal").classList.add("open");
+}
+function submitLearning(){
+  const uoi=document.getElementById("mUoi").value;
+  const intention=document.getElementById("mInt").value.trim();
+  if(!uoi){alert(siteLang==='fr'?"Veuillez sélectionner une unité.":"Please select a unit.");return;}
+  if(!intention){alert(siteLang==='fr'?"Veuillez renseigner l'intention d'apprentissage.":"Please fill in the learning intention.");return;}
+  const atl=getChecked("mAtlGrid");const lp=getChecked("mLpGrid");
+  if(!atl.length){alert(siteLang==='fr'?"Sélectionnez au moins une compétence ATL.":"Please select at least one ATL skill.");return;}
+  if(!lp.length){alert(siteLang==='fr'?"Sélectionnez au moins un attribut LP.":"Please select at least one LP attribute.");return;}
+  learningExps.push({id:learnNextId++,uoi,lang:document.getElementById("mLang").value,intention,
+    vocab:(document.getElementById("mVocab").value||'').split(',').map(s=>s.trim()).filter(Boolean),
+    sight:(document.getElementById("mSight").value||'').split(',').map(s=>s.trim()).filter(Boolean),
+    photo:pendingPhoto,atl,lp});
+  closeModal("learningModal");renderFilters();renderLearn();
+}
+
+// ── MODALS ──
+function closeModal(id){document.getElementById(id).classList.remove("open");}
+document.querySelectorAll(".modal-bg").forEach(bg=>bg.addEventListener("click",e=>{if(e.target===bg)bg.classList.remove("open");}));
+
+// ── REFERENCES ──
+let refFilter='all';
+let refNextId=4;
+let references=[
+  {id:1,cat:'employer',
+   quoteFR:"Juliette fait preuve d'un engagement remarquable envers l'excellence pédagogique. Sa capacité à différencier l'enseignement pour des élèves aux profils linguistiques très variés est tout à fait exceptionnelle.",
+   quoteEN:"Juliette demonstrates a remarkable commitment to pedagogical excellence. Her ability to differentiate teaching for children with very diverse linguistic profiles is truly exceptional.",
+   name:"À compléter",roleFR:"Direction · CIS Singapour",roleEN:"School Leadership · CIS Singapore"},
+  {id:2,cat:'colleague',
+   quoteFR:"Travailler avec Juliette est une vraie chance. Elle apporte créativité, bienveillance et une rigueur professionnelle qui inspire toute l'équipe. Ses projets bilingues sont toujours innovants et centrés sur l'enfant.",
+   quoteEN:"Working with Juliette is a real privilege. She brings creativity, warmth, and professional rigour that inspires the whole team. Her bilingual projects are always innovative and child-centred.",
+   name:"À compléter",roleFR:"Collègue enseignante · CIS Singapour",roleEN:"Fellow Teacher · CIS Singapore"},
+  {id:3,cat:'parent',
+   quoteFR:"Notre fille a progressé de façon incroyable en français cette année. Juliette communique avec nous chaque semaine et on se sent vraiment impliqués dans les apprentissages. C'est rare et précieux.",
+   quoteEN:"Our daughter has made incredible progress in French this year. Juliette communicates with us every week and we really feel involved in the learning. That is rare and precious.",
+   name:"Parent d'élève",roleFR:"Parent · Classe JK/SK · CIS Singapour",roleEN:"Parent · JK/SK Class · CIS Singapore"},
+];
+
+const CAT_LABELS={
+  employer:{fr:"Employeur",en:"Employer",cls:"cat-employer"},
+  colleague:{fr:"Collègue",en:"Colleague",cls:"cat-colleague"},
+  parent:{fr:"Parent",en:"Parent",cls:"cat-parent"},
+};
+
+function setRefFilter(cat,btn){
+  refFilter=cat;
+  document.querySelectorAll('.ref-filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderRefs();
+}
+
+function renderRefs(){
+  const filtered=refFilter==='all'?references:references.filter(r=>r.cat===refFilter);
+  const grid=document.getElementById('refGrid');
+  if(!filtered.length){
+    grid.innerHTML=`<p style="color:var(--muted);font-size:0.9rem;grid-column:1/-1;"><span class="fr-only">Aucun témoignage dans cette catégorie.</span><span class="en-only">No testimonials in this category yet.</span></p>`;
+    return;
+  }
+  grid.innerHTML=filtered.map(r=>{
+    const cat=CAT_LABELS[r.cat]||CAT_LABELS.employer;
+    return`<div class="ref-card" data-rid="${r.id}">
+      <span class="ref-category-badge ${cat.cls}"><span class="fr-only">${cat.fr}</span><span class="en-only">${cat.en}</span></span>
+      <div class="ref-quote">
+        <span class="fr-only">${r.quoteFR}</span>
+        <span class="en-only">${r.quoteEN}</span>
+      </div>
+      <div class="ref-author">
+        <span class="ref-name">${r.name}</span>
+        <span class="ref-role"><span class="fr-only">${r.roleFR}</span><span class="en-only">${r.roleEN}</span></span>
+      </div>
+      <button class="ref-delete-btn editor-only" onclick="deleteRef(${r.id})" title="Supprimer"><i class="fi fi-rr-trash"></i></button>
+    </div>`;
+  }).join('');
+}
+
+function deleteRef(id){
+  if(!confirm(siteLang==='fr'?"Supprimer ce témoignage ?":"Delete this testimonial?"))return;
+  references=references.filter(r=>r.id!==id);
+  renderRefs();
+}
+
+function openRefModal(){
+  ['rQuoteFR','rQuoteEN','rName','rRoleFR','rRoleEN'].forEach(id=>{document.getElementById(id).value='';});
+  document.getElementById('rCat').value='employer';
+  document.getElementById('refModal').classList.add('open');
+}
+
+function submitRef(){
+  const name=document.getElementById('rName').value.trim();
+  const qFR=document.getElementById('rQuoteFR').value.trim();
+  const qEN=document.getElementById('rQuoteEN').value.trim();
+  if(!name||!qFR){
+    alert(siteLang==='fr'?"Veuillez renseigner la citation (FR) et le nom.":"Please fill in the quote (FR) and name.");
+    return;
+  }
+  references.push({
+    id:refNextId++,
+    cat:document.getElementById('rCat').value,
+    quoteFR:qFR,quoteEN:qEN||qFR,
+    name,
+    roleFR:document.getElementById('rRoleFR').value.trim(),
+    roleEN:document.getElementById('rRoleEN').value.trim()||document.getElementById('rRoleFR').value.trim(),
+  });
+  closeModal('refModal');
+  renderRefs();
+}
+
+// ── INIT ──
+renderFilters();renderLearn();renderRefs();
+</script>
+</body>
+</html>
